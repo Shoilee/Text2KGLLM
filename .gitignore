@@ -2,3 +2,4 @@
 build/*
 tmp/*
 src/ontogpt.egg-info/*
+!stamboeken_exp/*.ipynb
