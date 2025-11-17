@@ -1,0 +1,137 @@
+---
+input_text: |-
+  Josephus Hendrik Rochell
+  <br/>	
+  Vader Samuel
+  Moeder Getruida Merkes
+  Geboren den 11e Maart 1789.
+  Geboorte Plaats Wageningen
+  Laaste Woonplaats Rotterdam	
+  <br/>
+  In Dienst getreden
+  Groot Bretagne
+  Royaal Orange Battaillion
+  Cadet den . . . . . 1 Jany 1793
+  tot . . . . . 30 November 1802
+  Met de .*
+  de vrede gelic.*eerd
+  Frankrijk
+  corps du .* Marine
+  Opp.* Marin den . . . . . 18 April 1811
+  tot . . . . . 11 Sept 1811
+  75 Equipage de haut bord
+  .* .*ain den . . . . . 11 Sept 1811
+  tot . . . . . 4 Dec 1813
+  Afgegaan met Ontslag
+  Nederlands
+  Batn Inf. Nat Mil n70* .*
+  Sergeant den . . . . . 21 Maart 1814
+  tot . . . . . 24 April 1815
+  2nd Lieut den . . . . . 24 April 1815
+  tot . . . . . 16 July 1815
+  Batn Inf.* Nat. Mil N48
+  den . . . . . 16 July 1815
+  tot . . . . . 16 Juny 1817
+  Deport Batn voor de col N33.
+  den . . . . . 16 Juny 1817
+  tot . . . . . 3 Dec 1817
+  Vertrokken naar de .*
+  de van Texel .*
+  keerd te worden .* aan boord
+  van het schip Christina
+  Bernardina.* naar
+  Java den 3e December
+  1817
+  <br/>
+  Veldtogten | Wonden | Daden
+  1815 Frankrijk
+  bij de Bataille
+  van Waterlo
+raw_completion_output: |-
+  Here are the military posting details in the required format:
+
+  militarypostingdetails: Groot Bretagne Royaal Orange Battaillion, Cadet 1 Jany 1793, 30 November 1802 ; Frankrijk corps du .* Marine, Opp.* Marin 18 April 1811, 11 Sept 1811 ; 75 Equipage de haut bord .* .*ain 11 Sept 1811, 4 Dec 1813 ; Nederlands Batn Inf. Nat Mil n70*, Sergeant 21 Maart 1814, 24 April 1815 ; Batn Inf.* Nat. Mil N48 16 July 1815, 16 Juny 1817 ; Deport Batn voor de col N33. 16 Juny 1817, 3 Dec 1817
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  p144_joined_with: <The military unit that the person joined.>
+  p7_took_place_at: <Country name where the posting or service took place.>
+  rank: <The rank held by the person during the posting.>
+  p4_has_time_span: <starting date -- ending date of the military posting or service (DD Month YYYY - DD Month YYYY)>
+  p3_has_note: <Additional notes or contextual information about the event.>
+
+
+  Text:
+  Deport Batn voor de col N33. 16 Juny 1817, 3 Dec 1817
+
+  ===
+
+extracted_object:
+  militarypostingdetails:
+    - p144_joined_with: AUTO:Groot%20Bretagne%20Royaal%20Orange%20Battaillion
+      p7_took_place_at: AUTO:Not%20applicable%20%28country%20not%20specified%29
+      rank: Cadet
+      p4_has_time_span: 01 January 1793 - 30 November 1802
+    - p144_joined_with: AUTO:Frankrijk%20corps%20du
+      p7_took_place_at: AUTO:None%20%28no%20country%20name%20mentioned%29
+      rank: Not specified
+      p4_has_time_span: 18 April 1811 - 11 Sept 1811
+      p3_has_note: Opp. Marin
+    - p144_joined_with: AUTO:Equipage%20de%20haut%20bord
+      p7_took_place_at: AUTO:%28no%20country%20specified%29
+      rank: (no rank specified)
+      p4_has_time_span: 11 Sept 1811 - 4 Dec 1813
+      p3_has_note: (no additional notes or contextual information)
+    - p144_joined_with: AUTO:Nederlands%20Batn%20Inf.%20Nat%20Mil%20n70
+      p7_took_place_at: 
+        AUTO:Not%20specified%20%28country%20name%20not%20provided%29
+      rank: Sergeant
+      p4_has_time_span: 21 March 1814 - 24 April 1815
+      p3_has_note: None
+    - p144_joined_with: AUTO:Batn%20Inf.%20Nat.
+      p7_took_place_at: 
+        AUTO:Not%20specified%20%28text%20does%20not%20indicate%20a%20country%20or%20location%29
+      rank: Not specified (rank not mentioned in the text)
+      p4_has_time_span: 16 July 1815 - 16 June 1817
+      p3_has_note: Not applicable (no additional notes provided)
+    - p144_joined_with: AUTO:Deport%20Batn
+      p7_took_place_at: AUTO:None%20%28country%20not%20specified%29
+      rank: None (no rank information provided)
+      p4_has_time_span: 16 Juny 1817 - 3 Dec 1817
+      p3_has_note: None (no additional notes or contextual information provided)
+named_entities:
+  - id: AUTO:Groot%20Bretagne%20Royaal%20Orange%20Battaillion
+    label: Groot Bretagne Royaal Orange Battaillion
+    original_spans:
+      - 177:216
+  - id: AUTO:Not%20applicable%20%28country%20not%20specified%29
+    label: Not applicable (country not specified)
+  - id: AUTO:Frankrijk%20corps%20du
+    label: Frankrijk corps du
+    original_spans:
+      - 312:329
+  - id: AUTO:None%20%28no%20country%20name%20mentioned%29
+    label: None (no country name mentioned)
+  - id: AUTO:Equipage%20de%20haut%20bord
+    label: Equipage de haut bord
+    original_spans:
+      - 411:431
+  - id: AUTO:%28no%20country%20specified%29
+    label: (no country specified)
+  - id: AUTO:Nederlands%20Batn%20Inf.%20Nat%20Mil%20n70
+    label: Nederlands Batn Inf. Nat Mil n70
+    original_spans:
+      - 515:546
+  - id: AUTO:Not%20specified%20%28country%20name%20not%20provided%29
+    label: Not specified (country name not provided)
+  - id: AUTO:Batn%20Inf.%20Nat.
+    label: Batn Inf. Nat.
+  - id: 
+      AUTO:Not%20specified%20%28text%20does%20not%20indicate%20a%20country%20or%20location%29
+    label: Not specified (text does not indicate a country or location)
+  - id: AUTO:Deport%20Batn
+    label: Deport Batn
+    original_spans:
+      - 760:770
+  - id: AUTO:None%20%28country%20not%20specified%29
+    label: None (country not specified)

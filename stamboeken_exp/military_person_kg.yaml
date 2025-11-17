@@ -1,0 +1,100 @@
+---
+input_text: |-
+  Josephus Hendrik Rochell
+  <br/>	
+  Vader Samuel
+  Moeder Getruida Merkes
+  Geboren den 11e Maart 1789.
+  Geboorte Plaats Wageningen
+  Laaste Woonplaats Rotterdam	
+  <br/>
+  In Dienst getreden
+  Groot Bretagne
+  Royaal Orange Battaillion
+  Cadet den . . . . . 1 Jany 1793
+  tot . . . . . 30 November 1802
+  Met de .*
+  de vrede gelic.*eerd
+  Frankrijk
+  corps du .* Marine
+  Opp.* Marin den . . . . . 18 April 1811
+  tot . . . . . 11 Sept 1811
+  75 Equipage de haut bord
+  .* .*ain den . . . . . 11 Sept 1811
+  tot . . . . . 4 Dec 1813
+  Afgegaan met Ontslag
+  Nederlands
+  Batn Inf. Nat Mil n70* .*
+  Sergeant den . . . . . 21 Maart 1814
+  tot . . . . . 24 April 1815
+  2nd Lieut den . . . . . 24 April 1815
+  tot . . . . . 16 July 1815
+  Batn Inf.* Nat. Mil N48
+  den . . . . . 16 July 1815
+  tot . . . . . 16 Juny 1817
+  Deport Batn voor de col N33.
+  den . . . . . 16 Juny 1817
+  tot . . . . . 3 Dec 1817
+  Vertrokken naar de .*
+  de van Texel .*
+  keerd te worden .* aan boord
+  van het schip Christina
+  Bernardina.* naar
+  Java den 3e December
+  1817
+  <br/>
+  Veldtogten | Wonden | Daden
+  1815 Frankrijk
+  bij de Bataille
+  van Waterlo
+raw_completion_output: |-
+  Here are the extracted entities in the specified format:
+
+  id: Rochell001
+  name: Josephus Hendrik Rochell
+  birth_place: Wageningen
+  last_residence: Rotterdam
+  country_of_nationality: Netherlands
+  military_rank: Sergeant
+  label: Person
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  id: <generate a unique identifier for the name based on the person's full name>
+  basesurname: <The base surname name of the person.>
+  firstnames: <The first name(s) of the person.>
+  infix: <The infix of the person's name (e.g., "van", "de").>
+  label: <The label (name) of the named thing>
+
+
+  Text:
+  Josephus Hendrik Rochell
+
+  ===
+
+extracted_object:
+  id: Rochell001
+  label: Person
+  name:
+    id: rochell_josephus_hendrik
+    basesurname: Rochell
+    firstnames: Josephus Hendrik
+  birth_place: AUTO:Wageningen
+  last_residence: AUTO:Rotterdam
+  country_of_nationality: AUTO:Netherlands
+  military_rank: AUTO:Sergeant
+named_entities:
+  - id: AUTO:Wageningen
+    label: Wageningen
+    original_spans:
+      - 112:121
+  - id: AUTO:Rotterdam
+    label: Rotterdam
+    original_spans:
+      - 141:149
+  - id: AUTO:Netherlands
+    label: Netherlands
+  - id: AUTO:Sergeant
+    label: Sergeant
+    original_spans:
+      - 552:559
